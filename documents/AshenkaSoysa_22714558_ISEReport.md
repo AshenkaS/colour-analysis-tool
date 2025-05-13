@@ -61,8 +61,8 @@ Electromagnetic spectrum .
 - **Imports**: frequencyTHz(double)  
 - **Exports**: rangeResult (double)  
 - **Description**: Checks if a frequency is within visible light (400-790 THz), IR (1-399 THz), or UV (791-30,000 THz) 
-ranges. Returns structured result with range classification.
-- **Design Decision**: Used boolean flags to clearly identify which range the frequency falls into.
+ranges. Returns a message indicating which range the frequency belongs to.
+- **Design Decision**: Used if else to clearly seperate and prioritize checks for each frequency band.
 - **Assumptions**: Frequency is between 1 and 30,000 THz. Frequencies outside this are considered invalid.
 
 ### Submodule : FrequencyToColour

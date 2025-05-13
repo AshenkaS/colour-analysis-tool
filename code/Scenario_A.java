@@ -55,25 +55,20 @@ public class Scenario_A{
 
     // Check if a frequency is in the visible range of the electromagnetic spectrum
     public static String InRange(double frequencyTHz) {
-        if (frequencyTHz < 0 || frequencyTHz > 30000) {
-            throw new IllegalArgumentException("Frequency must be between 0 and 30,000 THz.");
-        }
+   	 if (frequencyTHz < 0 || frequencyTHz > 30000) {
+        	throw new IllegalArgumentException("Frequency must be between 0 and 30,000 THz.");
+   	 }
 
-        // Set boolean flags for the ranges
-        boolean isVisible = frequencyTHz >= 400 && frequencyTHz <= 790;
-        boolean isIR = frequencyTHz >= 1 && frequencyTHz <= 399;
-        boolean isUV = frequencyTHz >= 791 && frequencyTHz <= 30000;
-
-        if (isVisible) {
-            return "The frequency entered lies within the Visible Light range (400–790 THz).";
-        } else if (isIR) {
-            return "The frequency entered lies within the Infrared (IR) range (1–399 THz), which is not visible to the human eye.";
-        } else if (isUV) {
-            return "The frequency entered lies within the Ultraviolet (UV) range (791–30,000 THz), which is beyond the visible spectrum.";
-        }
-        return "The frequency is out of the known electromagnetic range (1–30,000 THz).";
+   	 if (frequencyTHz >= 400 && frequencyTHz <= 790) {
+        	return "The frequency entered lies within the Visible Light range (400–790 THz).";
+   	 } else if (frequencyTHz >= 1 && frequencyTHz <= 399) {
+        	return "The frequency entered lies within the Infrared (IR) range (1–399 THz), which is not visible to the human eye.";
+   	 } else if (frequencyTHz >= 791 && frequencyTHz <= 30000) {
+        	return "The frequency entered lies within the Ultraviolet (UV) range (791–30,000 THz), which is beyond the visible spectrum.";
+   	 } else {
+        	return "The frequency is out of the known electromagnetic range (1–30,000 THz).";
     }
-
+}
     // Converts a frequency (THz) to its corresponding visible colour, or returns a message if it's outside the visible light range.
     public static String FrequencyToColour(double frequencyTHz) {
         if (frequencyTHz >= 400 && frequencyTHz <= 479) {

@@ -74,7 +74,7 @@ public class Scenario_A{
         if (frequencyTHz >= 400 && frequencyTHz <= 479) {
             return "Red";
         } else if (frequencyTHz >= 480 && frequencyTHz <= 509) {
-            return "Orange"
+            return "Orange";
         } else if (frequencyTHz >= 510 && frequencyTHz <= 529) {
             return "Yellow";
         } else if (frequencyTHz >= 530 && frequencyTHz <= 599) {
@@ -88,7 +88,7 @@ public class Scenario_A{
         } else if (frequencyTHz < 400) {
             return "Too low — below red";
         } else {
-            return "Too high — above violet"
+            return "Too high — above violet";
         }
     }
 

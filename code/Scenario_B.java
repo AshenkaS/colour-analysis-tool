@@ -3,7 +3,7 @@ public class Scenario_B {
     // Finds a stone when a colour is given
     public static String getStone(String colour) {
         switch (colour.toLowerCase()) {
-            case "red"
+	    case "red":
                 return "The stone that matches your colour, Red, is Garnet.";
             case "orange":
                 return "The stone that matches your colour, Orange, is Moonstone.";
@@ -39,7 +39,7 @@ public class Scenario_B {
                 return "The musical note that matches your colour, Blue, is A.";
             case "violet":
                 return "The musical note that matches your colour, Violet, is B.";
-            default
+	    default:
                 return "Unknown colour. Please enter a valid colour name!";
         }
     }

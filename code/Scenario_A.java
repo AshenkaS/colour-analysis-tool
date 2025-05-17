@@ -40,7 +40,7 @@ public class Scenario_A{
         if (frequencyTHz <= 0) {
             throw new IllegalArgumentException("Frequency must be positive");
         }
-        double wavelength=300000 - frequencyTHz;
+        double wavelength=300000 /  frequencyTHz;
         return wavelength;
     }
 

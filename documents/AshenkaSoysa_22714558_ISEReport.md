@@ -139,3 +139,76 @@ java Main
 
 ---
 
+### Sample output of the production code
+
+1. Main Menu Output:
+
+ ![Main Menu](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/MENU.png)
+
+2. When a Valid Input(A) is given: 
+ 
+ ![Valid InputA](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/VALID1.png)
+
+3. When a Valid Input(B) is given:
+
+ ![Valid InputB](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/VALID2.png)
+
+4. When an Invalid Input(A) is given:
+
+ ![Invalid InputA](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/INVALID2.png)
+
+5. When an Invalid Input(B) is given:
+
+ ![Invalid InputB](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/INVALID1.png)
+
+### Different Modularity Concepts applied
+
+### 3. Different Modularity Concepts applied in the code
+
+1. **Independent Modules**  
+   Each module should have a clear purpose and should be able to function independently, without relying heavily on 
+other modules for its core functionality.
+   - Example: `Scenario_A` deals with frequency and calculations, while `Scenario_B` handles mappings colours to stones, musical notes, and emotions.
+
+2. **Code Reusability**  
+   Writing methods that can be used in different parts of the program or in other programs without rewriting the logic.     - Example: Methods like `getStone`, `getNote`, `convertFrequencyToWavelength`, and `FrequencyToColour` can be reused in any project that involves colour or frequency analysis.
+
+3. **High Cohesion**  
+   A module performs a single, well-defined task and makes it easier to understand and maintain.
+   - Example: `Scenario_A` only contains logic for colour frequencies and spectrum ranges and `Scenario_B` only mapping colours to stones, musical notes and emotions.
+
+4. **Loose Coupling**  
+    Modules are independent, with minimal dependencies.   
+   - Example: We can update or test `Scenario_B` without needing to touch or modify `Scenario_A`.
+
+5. **Encapsulation**  
+   Internal logic is hidden inside methods, and only necessary functionalities are exposed through method calls.  
+   - Example: When the user provides a frequency(ex:-700), the method FrequencyToColour() will returns the matching 
+colour. The user doesn’t need to understand how the colour is calculated.All the internal checking and logic are hidden inside the method.
+
+### 4A. Modularity Review checklist
+
+| **Category**         | **Check**                        | **Result** | **Explanation** |
+| -------------------- | -------------------------------- | ---------- | -----------------------------------------------------------------------------------------------|
+| **Global Variables** | No global variables used         |   Pass     | All variables are declared locally inside methods. |
+| **Control Flags**    | No unnecessary boolean flags     |   Failed   | Code uses boolean flags which is a type of control flags in the `InRange` method|
+| **High Cohesion**    | Each method has one focused task |   Pass     | Methods like `getStone` or `convertFrequencyToWavelength` handle one job. |
+| **Loose Coupling**   | Modules/classes are independent  |   Pass     | `Scenario_A` and `Scenario_B` don’t rely on each other’s internal workings. |
+| **Error Handling**   | Handles invalid input gracefully |   Pass     | Returns clear messages for invalid inputs (e.g., “Frequency must be between 0 and 30,000 THz”).|
+
+![before refactoring](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/beforerefactor.png)
+
+### 4B. Modularity Review checklist after Refactoring
+
+| **Category**         | **Check**                        | **Result** | **Explanation** |
+| -------------------- | -------------------------------- | ---------- | -----------------------------------------------------------------------------------------------|
+| **Global Variables** | No global variables used         |   Pass     | All variables are declared locally inside methods. |
+| **Control Flags**    | No unnecessary boolean flags     |   Pass     | `InRange` method was refactored and now uses if-else instead of control flags|
+| **High Cohesion**    | Each method has one focused task |   Pass     | Methods like `getStone` or `convertFrequencyToWavelength` handle one job. |
+| **Loose Coupling**   | Modules/classes are independent  |   Pass     | `Scenario_A` and `Scenario_B` don’t rely on each other’s internal workings. |
+| **Error Handling**   | Handles invalid input gracefully |   Pass     | Returns clear messages for invalid inputs (e.g., “Frequency must be between 0 and 30,000 THz”).|
+
+![after refactoring_log](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/refactorlog.png)
+
+![after refactoring](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/afterrefactor.png)
+

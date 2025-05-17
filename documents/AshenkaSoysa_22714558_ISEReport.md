@@ -108,3 +108,34 @@ fall outside the visible range.
 - **Assumptions**: Input has to be a valid visible colour and unknown colours return a default error string.
 
 ---
+
+## Modularity
+
+### Description on how to run your production code with correct commands.
+
+1. User has to open the terminal and navigate to the directory where the project is located using the below command.
+
+```
+cd /home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo
+```
+
+2. Next, the user has to go to the directory where the production code is located using the below command.
+
+```
+cd code
+```
+
+3. The user has to run the production code using the below command.
+
+```
+javac Scenario_A.java ; javac Scenario_B.java ; javac Main.java
+```
+
+Step 4: The user has to Run the main class using the below command.
+
+```
+java Main
+```
+
+---
+

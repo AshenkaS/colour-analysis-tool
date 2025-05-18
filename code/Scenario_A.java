@@ -76,19 +76,19 @@ public class Scenario_A{
         }
 
         if (frequencyTHz >= 400 && frequencyTHz <= 479) {
-            return "Red";
+            return "Colour: Red";
         } else if (frequencyTHz >= 480 && frequencyTHz <= 509) {
-            return "Orange";
+            return "Colour: Orange";
         } else if (frequencyTHz >= 510 && frequencyTHz <= 529) {
-            return "Yellow";
+            return "Colour: Yellow";
         } else if (frequencyTHz >= 530 && frequencyTHz <= 599) {
-            return "Green";
+            return "Colour: Green";
         } else if (frequencyTHz >= 600 && frequencyTHz <= 619) {
-            return "Cyan";
+            return "Colour: Cyan";
         } else if (frequencyTHz >= 620 && frequencyTHz <= 669) {
-            return "Blue";
+            return "Colour: Blue";
         } else if (frequencyTHz >= 670 && frequencyTHz <= 790) {
-            return "Violet";
+            return "Colour: Violet";
         } else if (frequencyTHz < 400) {
             return "Too low — below red";
         } else {

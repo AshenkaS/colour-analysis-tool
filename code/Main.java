@@ -29,7 +29,7 @@ public class Main {
                     String colour = scanner.nextLine();
                     try {
                         double[] bounds = Scenario_A.ColourFrequencyBounds(colour);
-                        System.out.println(colour + " frequency bounds: " + bounds[0] + " THz to " + bounds[1] + " THz");
+                        System.out.println("The frequency bounds for " + colour + " are: " + bounds[0] + " THz to " + bounds[1] + " THz");
                     } catch (IllegalArgumentException e) {
                         System.out.println(e.getMessage());
                     }

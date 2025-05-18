@@ -89,7 +89,7 @@ public class Main {
                         double freqToColour = scanner.nextDouble();
                         try {
                             String colourResult = Scenario_A.FrequencyToColour(freqToColour);
-                            System.out.println("Colour: " + colourResult);
+                            System.out.println(colourResult);
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
                         }

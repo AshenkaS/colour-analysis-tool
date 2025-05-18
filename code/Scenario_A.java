@@ -71,6 +71,10 @@ public class Scenario_A{
 }
     // Converts a frequency (THz) to its corresponding visible colour, or returns a message if it's outside the visible light range.
     public static String FrequencyToColour(double frequencyTHz) {
+        if (frequencyTHz <= 0) {
+            return "Please enter a positive frequency that is above zero.";
+        }
+
         if (frequencyTHz >= 400 && frequencyTHz <= 479) {
             return "Red";
         } else if (frequencyTHz >= 480 && frequencyTHz <= 509) {
@@ -94,6 +98,10 @@ public class Scenario_A{
 
     // Compares two frequencies to check if they produce the same or different colours
     public static String FrequencyComparison(double freq1, double freq2) {
+        if (freq1 <= 0 || freq2 <= 0) {
+            return "Please enter positive frequencies that are above zero.";
+        }
+
         String colour1 = FrequencyToColour(freq1);
         String colour2 = FrequencyToColour(freq2);
 
@@ -105,5 +113,5 @@ public class Scenario_A{
             return "The frequencies produce different colours: " + colour1 + " and " + colour2 + ".";
         }
     }
-}    
+}
 

@@ -50,17 +50,17 @@ public class Scenario_B {
             case "red":
                 return "The emotion that matches your colour, Red, is Confidence.";
             case "orange":
-                return "The emotion that matches your colour, Orange, is Happiness.";
+                return "The emotion that matches your colour, Orange, is Happy.";
             case "yellow":
-                return "The emotion that matches your colour, Yellow, is Happiness.";
+                return "The emotion that matches your colour, Yellow, is Happy.";
             case "green":
-                return "The emotion that matches your colour, Green, is Peacefulness.";
+                return "The emotion that matches your colour, Green, is Peaceful.";
             case "cyan":
                 return "The emotion that matches your colour, Cyan, is Calm.";
             case "blue":
                 return "The emotion that matches your colour, Blue, is Calm.";
             case "violet":
-                return "The emotion that matches your colour, Violet, is Sadness.";
+                return "The emotion that matches your colour, Violet, is Bravery.";
             default:
                 return "Unknown colour. Please enter a valid colour name!";
         }

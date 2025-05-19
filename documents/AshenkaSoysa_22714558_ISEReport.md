@@ -40,7 +40,7 @@ Electromagnetic spectrum .
 - **Design Decision**: Uses a switch-case for mapping known colour names.  
 - **Assumptions**: Input is a valid visible colour name (case-insensitive).
 
-### Submodule : FrequencyToWavelengthConverter
+### Submodule : convertFrequencyToWavelength
 
 - **Imports**: frequencyTHz(double)  
 - **Exports**: wavelength(double)  
@@ -48,7 +48,7 @@ Electromagnetic spectrum .
 - **Design Decision**: Uses the Formula 1 given in the Figure 1.
 - **Assumptions**: Input must be positive and non-zero.
 
-### Submodule : WavelengthToFrequencyConverter
+### Submodule : convertWavelengthToFrequency
 
 - **Imports**: wavelengthNm(double)  
 - **Exports**:  frequency(double)
@@ -83,7 +83,7 @@ fall outside the visible range.
 - **Design Decision**: Uses the FrequencyToColour method for both inputs and compares results.
 - **Assumptions**: Both input frequencies can be in within or outside visible range and are valid positive values.
 
-### Submodule : FindStone
+### Submodule : getStone
 
 - **Imports**: colour(String)  
 - **Exports**: stoneResult(String)  
@@ -91,7 +91,7 @@ fall outside the visible range.
 - **Design Decision**: Uses a switch-case for mapping.  
 - **Assumptions**: Input has to be a valid visible colour and unknown colours return a default error string.
 
-### Submodule : FindMusicalNote
+### Submodule : getNote
 
 - **Imports**: colour(String)  
 - **Exports**: noteResult(String)  
@@ -99,7 +99,7 @@ fall outside the visible range.
 - **Design Decision**: Uses a switch-case for mapping.  
 - **Assumptions**: Input has to be a valid visible colour and unknown colours return a default error string.
 
-### Submodule : FindMatchingEmotion
+### Submodule : getEmotion
 
 - **Imports**: colour(String)  
 - **Exports**: emotionResult(String)  

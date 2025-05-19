@@ -237,11 +237,11 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 | Category  | Test Data (THz) | Expected Console Output      |
 | --------- | ----------- | -------------------------------- |
-| 1         | 558         | Wavelength: 537.6344086021505 nm |
-| 2         | 300000      | Wavelength: 1.0 nm               |
-| 3         | 1           | Wavelength: 300000.0 nm          |
-| 4         | 0           | Frequency must be positive       |
-| 5         | -1          | Frequency must be positive       |
+| frequencyThz > 0          | 558         | Wavelength: 537.6344086021505 nm |
+| frequencyThz > 0          | 300000      | Wavelength: 1.0 nm               |
+| frequencyThz > 0         | 1           | Wavelength: 300000.0 nm          |
+| frequencyTHz <= 0         | 0           | Frequency must be positive       |
+| frequencyTHz <= 0         | -1          | Frequency must be positive       |
 
 - This submodule is responsible for converting a given frequency (in terahertz) to its corresponding wavelength (in nanometers). I have tested a range of valid input values, and the outputs are accurate. The submodule also correctly handles invalid inputs (such as zero or negative values) by displaying an appropriate error message.
 
@@ -250,11 +250,11 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 | Category  | Test Data (nm) | Expected Console Output        |
 | --------- | ---------- | ---------------------------------- |
-| 1         | 558        | Frequency: 537.6344086021505 THz   |
-| 2         | 1          | Frequency: 300000.0 THz            |
-| 3         | 300000     | Frequency: 1.0 THz                 |
-| 4         | 0          | Frequency must be positive         |
-| 5         | -50        | Frequency must be positive         |
+| wavelengthNm > 0         | 558        | Frequency: 537.6344086021505 THz   |
+| wavelengthNm > 0         | 1          | Frequency: 300000.0 THz            |
+| wavelengthNm > 0          | 300000     | Frequency: 1.0 THz                 |
+| wavelengthNm <= 0         | 0          | Frequency must be positive         |
+| wavelengthNm <= 0         | -50        | Frequency must be positive         |
 
 - This submodule is designed to convert a given wavelength (in nanometers) to its corresponding frequency (in terahertz). I have verified the output for all valid input values, and the results are accurate. Additionally, the submodule correctly handles invalid inputs by displaying an appropriate error message.
 

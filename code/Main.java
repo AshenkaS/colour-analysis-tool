@@ -25,15 +25,11 @@ public class Main {
 
                 switch (choice) {
                     case 1:
-                    System.out.print("Enter a colour: ");
-                    String colour = scanner.nextLine();
-                    try {
-                        double[] bounds = Scenario_A.ColourFrequencyBounds(colour);
-                        System.out.println("The frequency bounds for " + colour + " are: " + bounds[0] + " THz to " + bounds[1] + " THz");
-                    } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
+                        System.out.print("Enter a colour: ");
+                        String colour = scanner.nextLine();
+                        String result = Scenario_A.ColourFrequencyBounds(colour);
+                        System.out.println(result);
+                        break;
 
                 case 2:
                     System.out.print("Enter frequency in THz: ");

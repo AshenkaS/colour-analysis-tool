@@ -1,38 +1,25 @@
 public class Scenario_A{
 
     // Frequency bounds for each colour
-    public static double[] ColourFrequencyBounds(String colour) {
-        double[] result = null;
-        
-        colour = colour.toLowerCase(); // Convert the color name to lowercase
-        
-        switch (colour) {
+    public static String ColourFrequencyBounds(String colour) {
+        switch (colour.toLowerCase()) {
             case "red":
-                result = new double[]{400, 479};
-                break;
+                return "The frequency bounds for Red are: 400 THz to 479 THz";
             case "orange":
-                result = new double[]{480, 509};
-                break;
+                return "The frequency bounds for Orange are: 480 THz to 509 THz";
             case "yellow":
-                result = new double[]{510, 529};
-                break;
+                return "The frequency bounds for Yellow are: 510 THz to 529 THz";
             case "green":
-                result = new double[]{530, 599};
-                break;
+                return "The frequency bounds for Green are: 530 THz to 599 THz";
             case "cyan":
-                result = new double[]{600, 619};
-                break;
+                return "The frequency bounds for Cyan are: 600 THz to 619 THz";
             case "blue":
-                result = new double[]{620, 669};
-                break;
+                return "The frequency bounds for Blue are: 620 THz to 669 THz";
             case "violet":
-                result = new double[]{670, 790};
-                break;
+                return "The frequency bounds for Violet are: 670 THz to 790 THz";
             default:
-                throw new IllegalArgumentException("Please enter a valid colour name.");
+                return "Please enter a valid colour name.";
         }
-        
-        return result;
     }
 
     // Converts frequency (THz) to wavelength (nm) using the formula

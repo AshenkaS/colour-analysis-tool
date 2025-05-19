@@ -34,8 +34,8 @@ does.
 ### Submodule : ColourFrequencyBounds
 
 - **Imports**: colour(String) 
-- **Exports**: frequencybounds(double[])
-- **Description**: When a colour name is given, returns the upper and lower bounds of its frequency range in the known 
+- **Exports**: result(String)
+- **Description**: When a colour name is given, returns a string of the upper and lower bounds of its frequency range in the known 
 Electromagnetic spectrum .
 - **Design Decision**: Uses a switch-case for mapping known colour names.  
 - **Assumptions**: Input is a valid visible colour name (case-insensitive).
@@ -147,7 +147,7 @@ java Main
 
 2. When a Valid Input(A) is given: 
  
- ![Valid InputA](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/VALID1.png)
+ ![Valid InputA](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/VALIDNEW.png)
 
 3. When a Valid Input(B) is given:
 
@@ -219,12 +219,12 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 | Category         | Test Data | Expected Console Output                                     |
 | ---------------- | ---------| ------------------------------------------------------------ |
-| valid colour     | "red"    | The frequency bounds for red are: 400 THz to 479 THz         |
+| valid colour     | "red"    | The frequency bounds for Red are: 400 THz to 479 THz         |
 | valid colour     | "Orange" | The frequency bounds for Orange are: 480 THz to 509 THz      |
-| valid colour     | "YELLOW" | The frequency bounds for YELLOW are: 510 THz to 529 THz      |
+| valid colour     | "YELLOW" | The frequency bounds for Yellow are: 510 THz to 529 THz      |
 | valid colour     | "Green"  | The frequency bounds for Green are: 530 THz to 599 THz       |
-| valid colour     | "cyan"   | The frequency bounds for cyan are: 600 THz to 619 THz        |
-| valid colour     | "blue"   | The frequency bounds for blue are: 620 THz to 669 THz        |
+| valid colour     | "cyan"   | The frequency bounds for Cyan are: 600 THz to 619 THz        |
+| valid colour     | "blue"   | The frequency bounds for Blue are: 620 THz to 669 THz        |
 | valid colour     | "Violet" | The frequency bounds for Violet are: 670 THz to 790 THz      |
 | invalid colour   | "white"  | Please enter a valid colour name.                            |
 | invalid colour   |   ""     | Please enter a valid colour name.                            | 

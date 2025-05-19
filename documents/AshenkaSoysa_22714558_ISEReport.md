@@ -212,3 +212,229 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 ![after refactoring](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/afterrefactor.png)
 
+## Black-Box testing
+
+### Submodule : `ColourFrequencyBounds`
+- Equivalance Partitioning
+
+| Category         | Test Data | Expected Console Output                                     |
+| ---------------- | ---------| ------------------------------------------------------------ |
+| valid colour     | "red"    | The frequency bounds for red are: 400 THz to 479 THz         |
+| valid colour     | "Orange" | The frequency bounds for Orange are: 480 THz to 509 THz      |
+| valid colour     | "YELLOW" | The frequency bounds for YELLOW are: 510 THz to 529 THz      |
+| valid colour     | "Green"  | The frequency bounds for Green are: 530 THz to 599 THz       |
+| valid colour     | "cyan"   | The frequency bounds for cyan are: 600 THz to 619 THz        |
+| valid colour     | "blue"   | The frequency bounds for blue are: 620 THz to 669 THz        |
+| valid colour     | "Violet" | The frequency bounds for Violet are: 670 THz to 790 THz      |
+| invalid colour   | "white"  | Please enter a valid colour name.                            |
+| invalid colour   |   ""     | Please enter a valid colour name.                            | 
+| invalid colour   | "Soysa"  | Please enter a valid colour name.                            |
+
+-  This submodule is responsible for giving the the upper and lower bounds when a colour is given. I have tested all the valid colour names and the frequency bounds are correct. also when I give invalid colour name it gives the error message.
+
+### Submodule : `convertFrequencyToWavelength`
+- Equivalance Partitioning
+
+| Category  | Test Data (THz) | Expected Console Output      |
+| --------- | ----------- | -------------------------------- |
+| 1         | 558         | Wavelength: 537.6344086021505 nm |
+| 2         | 300000      | Wavelength: 1.0 nm               |
+| 3         | 1           | Wavelength: 300000.0 nm          |
+| 4         | 0           | Frequency must be positive       |
+| 5         | -1          | Frequency must be positive       |
+
+- This submodule is responsible for converting a given frequency (in terahertz) to its corresponding wavelength (in nanometers). I have tested a range of valid input values, and the outputs are accurate. The submodule also correctly handles invalid inputs (such as zero or negative values) by displaying an appropriate error message.
+
+### Submodule : `convertWavelengthToFrequency`
+- Equivalance Partitioning
+
+| Category  | Test Data (nm) | Expected Console Output        |
+| --------- | ---------- | ---------------------------------- |
+| 1         | 558        | Frequency: 537.6344086021505 THz   |
+| 2         | 1          | Frequency: 300000.0 THz            |
+| 3         | 300000     | Frequency: 1.0 THz                 |
+| 4         | 0          | Frequency must be positive         |
+| 5         | -50        | Frequency must be positive         |
+
+- This submodule is designed to convert a given wavelength (in nanometers) to its corresponding frequency (in terahertz). I have verified the output for all valid input values, and the results are accurate. Additionally, the submodule correctly handles invalid inputs by displaying an appropriate error message.
+
+### Submodule : `InRange`
+- Equivalance Partitioning
+
+| Category  | Test Data (THz) | Expected Console Output       |
+| --------- | ---------- | ---------------------------------- |
+| frequencyTHz >= 400 && frequencyTHz <= 790 | 500 | The frequency entered lies within the Visible Light range (400–790 THz). |
+| frequencyTHz >= 1 && frequencyTHz <= 399   | 1 | The frequency entered lies within the Infrared (IR) range (1–399 THz), which is not visible to the human eye. |
+| frequencyTHz >= 791 && frequencyTHz <= 30000 | 30000 | The frequency entered lies within the Ultraviolet (UV) range (791–30,000 THz), which is beyond the visible spectrum. |
+| frequencyTHz =0   | 0 | The frequency is out of the known electromagnetic range (1–30,000 THz). |
+| frequencyTHz < 0 OR frequencyTHz > 30000   | -1 | Frequency must be between 0 and 30,000 THz. |
+| frequencyTHz < 0 OR frequencyTHz > 30000   | 30001 | Frequency must be between 0 and 30,000 THz. |
+
+- Boundary Value Analysis
+
+| Boundary               | Test Data (THz) | Expected Console Output                  |
+| ---------------------- | -----------     | -------------------------------------------- |
+| Lower IR Boundary      | 1               | The frequency entered lies within the Infrared (IR) range (1–399 THz), which is not visible to the human eye. |
+| Upper IR Boundary      | 399             | The frequency entered lies within the Infrared (IR) range (1–399 THz), which is not visible to the human eye. |
+| Lower Visible Boundary | 400             | The frequency entered lies within the Visible Light range (400–790 THz).            |
+| Upper Visible Boundary | 790             | The frequency entered lies within the Visible Light range (400–790 THz).            |
+| Lower UV Boundary      | 791             | The frequency entered lies within the Ultraviolet (UV) range (791–30,000 THz), which is beyond the visible spectrum.      |
+| Upper UV Boundary      | 30000           | The frequency entered lies within the Ultraviolet (UV) range (791–30,000 THz), which is beyond the visible spectrum.      |
+| Below IR /Invalid      | 0               | The frequency is out of the known electromagnetic range (1–30,000 THz).  |
+| Above UV /Invalid      | 30001           | Frequency must be between 0 and 30,000 THz.  |
+
+- This submodule checks if a given frequency falls within the visible, infrared, or ultraviolet range using the InRange method. It correctly categorizes frequencies and handles invalid inputs with appropriate error messages.
+
+### Submodule : `FrequencyToColour`
+- Equivalance Partitioning
+
+| Category                                   | Test Data(THz) |   Expected Console Output |
+|--------------------------------------------|--------------|---------------------------- |
+| frequencyTHz >= 400 && frequencyTHz <= 479 | 450      | Colour: Red    |
+| frequencyTHz >= 480 && frequencyTHz <= 509 | 507      | Colour: Orange |
+| frequencyTHz >= 510 && frequencyTHz <= 529 | 520      | Colour: Yellow |
+| frequencyTHz >= 530 && frequencyTHz <= 599 | 570      | Colour: Green  |
+| frequencyTHz >= 600 && frequencyTHz <= 619 | 610      | Colour: Cyan   |
+| frequencyTHz >= 620 && frequencyTHz <= 669 | 635      | Colour: Blue   |
+| frequencyTHz >= 670 && frequencyTHz <= 790 | 790      | Colour: Violet |
+| frequencyTHz <= 0                          | -1       | Please enter a positive frequency that is above zero. |
+| frequencyTHz <= 0                          | 0        | Please enter a positive frequency that is above zero. |
+| frequencyTHz < 400                         | 200      | Too low — below red                                   |
+| frequencyTHz > 790                         | 791      | Too high — above violet                               |
+
+- This submodule converts a given frequency to its corresponding visible color or returns a message if it's outside the visible range or if the frequency is less than or equal to zero. I've verified the outputs for valid inputs, and it correctly handles invalid values with appropriate messages.
+
+### Submodule : `FrequencyComparison`
+- Equivalance Partitioning
+
+| Category                                                          | Test Data(THz) | Expected Console Output                                          |
+|-------------------------------------------------------------------|----------------|------------------------------------------------------------------|
+| Both Frequencies are in the same range                            | (621,660)      | The frequencies produce the same colour: Blue                    |
+| When one Frequency is outside of the visible range                | (440,1)        | One or both frequencies are outside the visible range.           |
+| When the Frequencies entered are different                        | (450,650)      | The frequencies produce different colours: Red and Blue.         |
+| When both are outside the visible range                           | (1,791)        | One or both frequencies are outside the visible range.           |
+| When both frequencies are outside visible range and are below 400 | (2,399)        | The frequencies produce the same colour: Too low — below red     |
+| When both frequencies are outside visible range and are above 790 | (800,1000)     | The frequencies produce the same colour: Too high — below violet |
+| When freq1 <= 0 (freq2 valid)                                     | (-1, 500)      | Please enter positive frequencies that are above zero.           |
+| When freq2 <= 0 (freq1 valid)                                     | (500, -1)      | Please enter positive frequencies that are above zero.           |
+| When both <= 0                                                    | (-1, 0)        | Please enter positive frequencies that are above zero.           |
+
+- Boundary Value Analysis
+
+| Test Case              | Test Data (THz) | Expected Console Output                               |
+| ---------------------- | --------------- | ----------------------------------------------------- |
+| Below Red / Invalid    | 399             | Too low — below red                                   |
+| Red Lower Bound        | 400             | Colour: Red                                           |
+| Red Upper Bound        | 479             | Colour: Red                                           |
+| Orange Lower Bound     | 480             | Colour: Orange                                        |
+| Orange Upper Bound     | 509             | Colour: Orange                                        |
+| Yellow Lower Bound     | 510             | Colour: Yellow                                        |
+| Yellow Upper Bound     | 529             | Colour: Yellow                                        |
+| Green Lower Bound      | 530             | Colour: Green                                         |
+| Green Upper Bound      | 599             | Colour: Green                                         |
+| Cyan Lower Bound       | 600             | Colour: Cyan                                          |
+| Cyan Upper Bound       | 619             | Colour: Cyan                                          |
+| Blue Lower Bound       | 620             | Colour: Blue                                          |
+| Blue Upper Bound       | 669             | Colour: Blue                                          |
+| Violet Lower Bound     | 670             | Colour: Violet                                        |
+| Violet Upper Bound     | 790             | Colour: Violet                                        |
+| Above Violet / Invalid | 791             | Too high — above violet                               |
+| Zero  / Invalid        | 0               | Please enter a positive frequency that is above zero. |
+| Negative / Invalid     | -1              | Please enter a positive frequency that is above zero. |
+
+
+- This submodule checks whether two given frequencies produce the same visible color. It also validates if either frequency is out of range or non-positive. I’ve tested both valid and invalid inputs, and it handles all cases correctly with appropriate messages.
+
+### Submodule : `getStone`
+- Equivalance Partitioning
+
+| Category       | Test Data | Expected Console Output                                   |
+| -------------- | --------  | --------------------------------------------------------- |
+| valid colour   | "red"     | The stone that matches your colour, Red, is Garnet.       |
+| valid colour   | "Orange"  | The stone that matches your colour, Orange, is Moonstone. |
+| valid colour   | "yellow"  | The stone that matches your colour, Yellow, is Topaz.     |
+| valid colour   | "GREEN"   | The stone that matches your colour, Green, is Emerald.    |
+| valid colour   | "cyan"    | The stone that matches your colour, Cyan, is Turquoise.   |
+| valid colour   | "Blue"    | The stone that matches your colour, Blue, is Opal.        |
+| valid colour   | "VIOLET"  | The stone that matches your colour, Violet, is Amethyst.  |
+| invalid colour | "cya"     | Unknown colour. Please enter a valid colour name!         |
+| invalid colour | "white"   | Unknown colour. Please enter a valid colour name!         |
+| invalid colour | ""        | Unknown colour. Please enter a valid colour name!         |
+
+- This submodule will give the user the ability to enter a colour and will output the gemstone that matches that colour. I tested the code and it will give a error message for invalid colours and will give the correct gemstone for valid colours.
+
+### Submodule : `getNote`
+- Equivalance Partitioning
+
+| Category       | Test Data    | Expected Console Output                                  |
+| -------------- | ------------ | -------------------------------------------------------- |
+| valid colour   | "red"        | The musical note that matches your colour, Red, is C.    |
+| valid colour   | "Orange"     | The musical note that matches your colour, Orange, is D. |
+| valid colour   | "Yellow"     | The musical note that matches your colour, Yellow, is E. |
+| valid colour   | "Green"      | The musical note that matches your colour, Green, is F.  |
+| valid colour   | "CYAN"       | The musical note that matches your colour, Cyan, is G.   |
+| valid colour   | "blue"       | The musical note that matches your colour, Blue, is A.   |
+| valid colour   | "Violet"     | The musical note that matches your colour, Violet, is B. |
+| invalid colour | "viole"      | Unknown colour. Please enter a valid colour name!        |
+| invalid colour | "White"      | Unknown colour. Please enter a valid colour name!        |
+| invalid colour | ""           | Unknown colour. Please enter a valid colour name!        |
+
+- This submodule will give the user the ability to enter a colour and will output the musical note that matches that colour. I tested the code and it will give a error message for invalid colours and will give the correct musical note for valid colours.
+
+### Submodule : `getEmotion`
+- Equivalance Partitioning
+
+| Category       | Test Data    | Expected Console Output                                       |
+| -------------- | ------------ | ------------------------------------------------------------- |
+| valid colour   | "Red"        | The emotion that matches your colour, Red, is Confidence.     |
+| valid colour   | "Orange"     | The emotion that matches your colour, Orange, is Happy.       |
+| valid colour   | "Yellow"     | The emotion that matches your colour, Yellow, is Happy.       |
+| valid colour   | "Green"      | The emotion that matches your colour, Green, is Peaceful.     |
+| valid colour   | "Cyan"       | The emotion that matches your colour, Cyan, is Calm.          |
+| valid colour   | "Blue"       | The emotion that matches your colour, Blue, is Calm.          |
+| valid colour   | "Violet"     | The emotion that matches your colour, Violet, is Bravery.     |
+| invalid colour | "re"         | Unknown colour. Please enter a valid colour name!             |
+| invalid colour | "Silver"     | Unknown colour. Please enter a valid colour name!             |
+| invalid colour | ""           | Unknown colour. Please enter a valid colour name!             |
+
+- This submodule will give the user the ability to enter a colour and will output the emotion that matches that colour. I tested the code and it will give a error message for invalid colours and will give the correct emotion for valid colours.
+
+## White-Box testing
+
+### Submodule : `FrequencyToColour`
+- Construct used : `if-else`
+
+|  Path Description                      | Test Data (frequencyTHz)      | Expected Result                                       |
+| -------------------------------------- | ----------------------------- | ----------------------------------------------------- |
+| Enter first `if` part                  | 0                             | Please enter a positive frequency that is above zero. |
+| Enter second `if` part (Red)           | 450                           | Colour: Red                                           |
+| Enter first `else-if` part (Orange)    | 490                           | Colour: Orange                                        |
+| Enter second `else-if` part (Yellow)   | 515                           | Colour: Yellow                                        |
+| Enter third `else-if` part (Green)     | 550                           | Colour: Green                                         |
+| Enter fourth `else-if` part (Cyan)     | 610                           | Colour: Cyan                                          |
+| Enter fifth `else-if` part (Blue)      | 650                           | Colour: Blue                                          |
+| Enter sixth `else-if` part (Violet)    | 700                           | Colour: Violet                                        |
+| Enter seventh `else-if` part (Too low) | 300                           | Too low — below red                                   |
+| Enter `else` part (Too high)           | 800                           | Too high — above violet                               |
+
+- I have used if-else logic in the FrequencyToColour submodule to accurately assign the corresponding colour based on the frequency entered by the user, provided the input is valid.
+
+### Submodule : `getStone`
+- Construct used : `switch cases`
+
+| Path Description                | Test Data               | Expected Result                                           |
+| ------------------------------- | ----------------------- | --------------------------------------------------------- |
+| Enter the case "red"            | "red"                   | The stone that matches your colour, Red, is Garnet.       |
+| Enter the case "orange"         | "orange"                | The stone that matches your colour, Orange, is Moonstone. |
+| Enter the case "yellow"         | "yellow"                | The stone that matches your colour, Yellow, is Topaz.     |
+| Enter the case "green"          | "green"                 | The stone that matches your colour, Green, is Emerald.    |
+| Enter the case "cyan"           | "cyan"                  | The stone that matches your colour, Cyan, is Turquoise.   |
+| Enter the case "blue"           | "blue"                  | The stone that matches your colour, Blue, is Opal.        |
+| Enter the case "violet"         | "violet"                | The stone that matches your colour, Violet, is Amethyst.  |
+| Enter the case default          | "pink"                  | Unknown colour. Please enter a valid colour name!         |
+| Enter the case "red" (Case-insensitive check) | "RED"                   | The stone that matches your colour, Red, is Garnet.       |
+| Empty input                     | ""                      | Unknown colour. Please enter a valid colour name!         |
+
+- I have used switch cases in the getStone submodule and each case is checking the input against a specific colour name. If the input matches a case, the corresponding stone name is returned. If the input does not match any case, the default case is executed, which returns an error message.
+
+

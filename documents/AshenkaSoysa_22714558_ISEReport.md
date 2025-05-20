@@ -43,7 +43,7 @@ Electromagnetic spectrum .
 ### Submodule : convertFrequencyToWavelength
 
 - **Imports**: frequencyTHz(double)  
-- **Exports**: wavelength(double)  
+- **Exports**: wavelength(Stirng)  
 - **Description**: Converts a given frequency (THz) to wavelength (nm) using `wavelength = 300000 / frequency`.Validates positive input.
 - **Design Decision**: Uses the Formula 1 given in the Figure 1.
 - **Assumptions**: Input must be positive and non-zero.
@@ -51,7 +51,7 @@ Electromagnetic spectrum .
 ### Submodule : convertWavelengthToFrequency
 
 - **Imports**: wavelengthNm(double)  
-- **Exports**:  frequency(double)
+- **Exports**:  frequency(String)
 - **Description**: Converts a given wavelength (nm) to frequency (THz) using `frequency = 300000 / wavelength`.Validates positive input.
 - **Design Decision**: Uses the Formula 2 given in the Figure 1(inversing the previous formula).
 - **Assumptions**: Input must be positive and non-zero, and in .

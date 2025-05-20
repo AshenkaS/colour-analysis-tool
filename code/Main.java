@@ -32,36 +32,34 @@ public class Main {
                         break;
 
                 case 2:
-                    System.out.print("Enter frequency in THz: ");
-                    if (scanner.hasNextDouble()) {  // Check if the input is a valid number
-                        double freq = scanner.nextDouble();
-                        try {
-                            double wavelength = Scenario_A.convertFrequencyToWavelength(freq);
-                            System.out.println("Wavelength: " + wavelength + " nm");
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(e.getMessage());
+                        System.out.print("Enter frequency in THz: ");
+                        if (scanner.hasNextDouble()) {
+                            double freq = scanner.nextDouble();
+                            try {
+                                System.out.println(Scenario_A.convertFrequencyToWavelength(freq));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } else {
+                            System.out.println("Invalid input. Please enter a numeric frequency value.");
+                            scanner.nextLine(); // Clear invalid input
                         }
-                    } else {
-                        System.out.println("Invalid input. Please enter a numeric frequency value.");
-                        scanner.nextLine();  
-                    }
-                    break;
+                        break;
 
-                case 3:
-                    System.out.print("Enter wavelength in nm: ");
-                    if (scanner.hasNextDouble()) {  
-                        double wavelength = scanner.nextDouble();
-                        try {
-                            double frequency = Scenario_A.convertWavelengthToFrequency(wavelength);
-                            System.out.println("Frequency: " + frequency + " THz");
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(e.getMessage());
+                    case 3:
+                        System.out.print("Enter wavelength in nm: ");
+                        if (scanner.hasNextDouble()) {
+                            double wavelength = scanner.nextDouble();
+                            try {
+                                System.out.println(Scenario_A.convertWavelengthToFrequency(wavelength));
+                            } catch (IllegalArgumentException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } else {
+                            System.out.println("Invalid input. Please enter a numeric wavelength value.");
+                            scanner.nextLine();
                         }
-                    } else {
-                        System.out.println("Invalid input. Please enter a numeric wavelength value.");
-                        scanner.nextLine();  
-                    }
-                    break;
+                        break;
 
                 case 4:
                     System.out.print("Enter frequency in THz: ");

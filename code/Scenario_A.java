@@ -22,24 +22,23 @@ public class Scenario_A{
         }
     }
 
-    // Converts frequency (THz) to wavelength (nm) using the formula
-    public static double convertFrequencyToWavelength(double frequencyTHz) {
+     // Converts frequency (THz) to wavelength (nm) using the formula
+    public static String convertFrequencyToWavelength(double frequencyTHz) {
         if (frequencyTHz <= 0) {
             throw new IllegalArgumentException("Frequency must be positive");
         }
-        double wavelength=300000 /  frequencyTHz;
-        return wavelength;
+        double wavelength = 300000 / frequencyTHz;
+        return "Wavelength: " + wavelength + " nm";
     }
 
-    // Converts wavelength (nm) to frequency (THz) using the formula
-    public static double convertWavelengthToFrequency(double wavelengthNm) {
+    // Converts wavelength (nm) to frequency (THz) and returns formatted string
+    public static String convertWavelengthToFrequency(double wavelengthNm) {
         if (wavelengthNm <= 0) {
             throw new IllegalArgumentException("Wavelength must be positive");
         }
-        double frequency=300000 / wavelengthNm;
-        return frequency;
+        double frequency = 300000 / wavelengthNm;
+        return "Frequency: " + frequency + " THz";
     }
-
     // Check if a frequency is in the visible range of the electromagnetic spectrum
     public static String InRange(double frequencyTHz) {
    	 if (frequencyTHz < 0 || frequencyTHz > 30000) {

@@ -61,21 +61,18 @@ public class Main {
                         }
                         break;
 
-                case 4:
-                    System.out.print("Enter frequency in THz: ");
-                    if (scanner.hasNextDouble()) {
-                        double checkFreq = scanner.nextDouble();
-                        try {
+       		case 4:
+                        System.out.print("Enter frequency in THz: ");
+                        if (scanner.hasNextDouble()) {
+                            double checkFreq = scanner.nextDouble();
+                            scanner.nextLine(); 
                             String rangeResult = Scenario_A.InRange(checkFreq);
                             System.out.println(rangeResult);
-                        } catch (IllegalArgumentException e) {
-                            System.out.println(e.getMessage());
+                        } else {
+                            System.out.println("Invalid input. Please enter a numeric frequency value.");
+                            scanner.nextLine(); 
                         }
-                    } else {
-                        System.out.println("Invalid input. Please enter a numeric frequency value.");
-                        scanner.nextLine(); // Clear the invalid input
-                    }
-                    break;
+                        break;
 
                 case 5:
                     System.out.print("Enter frequency in THz: ");
@@ -89,7 +86,7 @@ public class Main {
                         }
                     } else {
                         System.out.println("Invalid input. Please enter a numeric frequency value.");
-                        scanner.nextLine(); // Clear invalid input
+                        scanner.nextLine(); 
                     }
                     break;
 
@@ -97,17 +94,17 @@ public class Main {
                     try {
                         System.out.print("Enter first frequency in THz: ");
                         double firstFrequencyInput = scanner.nextDouble();
-                        scanner.nextLine(); // clear newline
+                        scanner.nextLine(); 
 
                         System.out.print("Enter second frequency in THz: ");
                         double secondFrequencyInput = scanner.nextDouble();
-                        scanner.nextLine(); // clear newline
+                        scanner.nextLine(); 
 
                         String comparisonMessage = Scenario_A.FrequencyComparison(firstFrequencyInput, secondFrequencyInput);
                         System.out.println(comparisonMessage);
                     } catch (Exception e) {
                         System.out.println("Error: Please enter valid numeric values for both frequencies.");
-                        scanner.nextLine(); // clear invalid input
+                        scanner.nextLine(); 
                     }
                     break;
 

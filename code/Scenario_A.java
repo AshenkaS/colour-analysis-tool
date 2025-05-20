@@ -42,7 +42,7 @@ public class Scenario_A{
     // Check if a frequency is in the visible range of the electromagnetic spectrum
     public static String InRange(double frequencyTHz) {
    	 if (frequencyTHz < 0 || frequencyTHz > 30000) {
-        	throw new IllegalArgumentException("Frequency must be between 0 and 30,000 THz.");
+        	return "Frequency must be between 0 and 30,000 THz.";
    	 }
 
    	 if (frequencyTHz >= 400 && frequencyTHz <= 790) {

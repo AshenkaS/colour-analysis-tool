@@ -487,3 +487,8 @@ I fixed the test case errors and the below image has the fixed version
 |getStone                    |done|not done         |    done   |String        |Input:String Output:String        | done         |not done |not done |
 |getNote                     |done|not done         |not done   |String        |Input:String Output:String        | done         |not done |not done |
 |getEmotion                  |done|not done         |not done   |String        |Input:String Output:String        | done         |not done |not done |
+
+---
+
+## Version Controlling
+

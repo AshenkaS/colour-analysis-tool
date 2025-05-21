@@ -15,7 +15,7 @@ public class TestCode {
     //Test to check frequency bounds for a given colour
     public static void TestColourFrequencyBounds() {
         try {
-            assert "The frequency bounds for Red are: 400 THz to 469 THz".equals(Scenario_A.ColourFrequencyBounds("red")) : "Red bounds not matching";
+            assert "The frequency bounds for Red are: 400 THz to 479 THz".equals(Scenario_A.ColourFrequencyBounds("red")) : "Red bounds not matching";
             assert "The frequency bounds for Orange are: 480 THz to 509 THz".equals(Scenario_A.ColourFrequencyBounds("Orange")) : "Orange bounds not matching";
             assert "The frequency bounds for Yellow are: 510 THz to 529 THz".equals(Scenario_A.ColourFrequencyBounds("YELLOW")) : "Yellow bounds not matching";
             assert "The frequency bounds for Green are: 530 THz to 599 THz".equals(Scenario_A.ColourFrequencyBounds("Green")) : "Green bounds not matching";
@@ -34,7 +34,7 @@ public class TestCode {
     //Test to check if frequency to wavelength converstion works properly
     public static void TestconvertFrequencyToWavelength() {
         try {
-            assert "Wavelength: 537.6344086021505 nm".equals(Scenario_A.convertFrequencyToWavelength(578)) : "Incorrect wavelength for 558 THz";
+            assert "Wavelength: 537.6344086021505 nm".equals(Scenario_A.convertFrequencyToWavelength(558)) : "Incorrect wavelength for 558 THz";
             assert "Wavelength: 1.0 nm".equals(Scenario_A.convertFrequencyToWavelength(300000)) : "Incorrect wavelength for 300000 THz";
             assert "Wavelength: 300000.0 nm".equals(Scenario_A.convertFrequencyToWavelength(1)) : "Incorrect wavelength for 1 THz";
 

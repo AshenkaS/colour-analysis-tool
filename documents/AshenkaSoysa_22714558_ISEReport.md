@@ -436,4 +436,37 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 - I have used switch cases in the getStone submodule and each case is checking the input against a specific colour name. If the input matches a case, the corresponding stone name is returned. If the input does not match any case, the default case is executed, which returns an error message.
 
+## Test implementation and test execution
 
+### How to run the test implementation code
+
+1. User has to open the terminal and navigate to the directory where the project is located using the below command.
+
+```
+cd /home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo
+```
+
+2. Next, the user has to go to the directory where the test code is located using the below command.
+
+```
+cd code
+```
+
+3. The user has to run the test code using the below command.
+
+```
+javac TestCode.java 
+```
+
+Step 4: The user has to Run the TestCode class using the below command.
+
+```
+java -ea TestCode
+```
+- Output of the Test implementation
+
+![BeforeFixingErrors](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/BeforeFixingErrors.png)
+
+I fixed the test case errors and the below image has the fixed version
+
+![AfterFixingErrors](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/AfterFixingErrors.png)

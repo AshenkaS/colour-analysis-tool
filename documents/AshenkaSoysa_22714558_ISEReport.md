@@ -290,17 +290,40 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 | Category                                   | Test Data(THz) |   Expected Console Output |
 |--------------------------------------------|--------------|---------------------------- |
-| frequencyTHz >= 400 && frequencyTHz <= 479 | 450      | Colour: Red    |
-| frequencyTHz >= 480 && frequencyTHz <= 509 | 507      | Colour: Orange |
-| frequencyTHz >= 510 && frequencyTHz <= 529 | 520      | Colour: Yellow |
-| frequencyTHz >= 530 && frequencyTHz <= 599 | 570      | Colour: Green  |
-| frequencyTHz >= 600 && frequencyTHz <= 619 | 610      | Colour: Cyan   |
-| frequencyTHz >= 620 && frequencyTHz <= 669 | 635      | Colour: Blue   |
-| frequencyTHz >= 670 && frequencyTHz <= 790 | 790      | Colour: Violet |
+| frequencyTHz >= 400 && frequencyTHz <= 479 | 450      |  Red    |
+| frequencyTHz >= 480 && frequencyTHz <= 509 | 507      |  Orange |
+| frequencyTHz >= 510 && frequencyTHz <= 529 | 520      |  Yellow |
+| frequencyTHz >= 530 && frequencyTHz <= 599 | 570      |  Green  |
+| frequencyTHz >= 600 && frequencyTHz <= 619 | 610      |  Cyan   |
+| frequencyTHz >= 620 && frequencyTHz <= 669 | 635      |  Blue   |
+| frequencyTHz >= 670 && frequencyTHz <= 790 | 790      |  Violet |
 | frequencyTHz <= 0                          | -1       | Please enter a positive frequency that is above zero. |
 | frequencyTHz <= 0                          | 0        | Please enter a positive frequency that is above zero. |
 | frequencyTHz < 400                         | 200      | Too low — below red                                   |
 | frequencyTHz > 790                         | 791      | Too high — above violet                               |
+
+- Boundary Value Analysis
+
+| Test Case              | Test Data (THz) | Expected Console Output                               |
+| ---------------------- | --------------- | ----------------------------------------------------- |
+| Below Red / Invalid    | 399             | Too low — below red                                   |
+| Red Lower Bound        | 400             | Red                                           |
+| Red Upper Bound        | 479             | Red                                           |
+| Orange Lower Bound     | 480             | Orange                                        |
+| Orange Upper Bound     | 509             | Orange                                        |
+| Yellow Lower Bound     | 510             | Yellow                                        |
+| Yellow Upper Bound     | 529             | Yellow                                        |
+| Green Lower Bound      | 530             | Green                                         |
+| Green Upper Bound      | 599             | Green                                         |
+| Cyan Lower Bound       | 600             | Cyan                                          |
+| Cyan Upper Bound       | 619             | Cyan                                          |
+| Blue Lower Bound       | 620             | Blue                                          |
+| Blue Upper Bound       | 669             | Blue                                          |
+| Violet Lower Bound     | 670             | Violet                                        |
+| Violet Upper Bound     | 790             | Violet                                        |
+| Above Violet / Invalid | 791             | Too high — above violet                               |
+| Zero  / Invalid        | 0               | Please enter a positive frequency that is above zero. |
+| Negative / Invalid     | -1              | Please enter a positive frequency that is above zero. |
 
 - This submodule converts a given frequency to its corresponding visible color or returns a message if it's outside the visible range or if the frequency is less than or equal to zero. I've verified the outputs for valid inputs, and it correctly handles invalid values with appropriate messages.
 
@@ -318,30 +341,6 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 | When freq1 <= 0 (freq2 valid)                                     | (-1, 500)      | Please enter positive frequencies that are above zero.           |
 | When freq2 <= 0 (freq1 valid)                                     | (500, -1)      | Please enter positive frequencies that are above zero.           |
 | When both <= 0                                                    | (-1, 0)        | Please enter positive frequencies that are above zero.           |
-
-- Boundary Value Analysis
-
-| Test Case              | Test Data (THz) | Expected Console Output                               |
-| ---------------------- | --------------- | ----------------------------------------------------- |
-| Below Red / Invalid    | 399             | Too low — below red                                   |
-| Red Lower Bound        | 400             | Colour: Red                                           |
-| Red Upper Bound        | 479             | Colour: Red                                           |
-| Orange Lower Bound     | 480             | Colour: Orange                                        |
-| Orange Upper Bound     | 509             | Colour: Orange                                        |
-| Yellow Lower Bound     | 510             | Colour: Yellow                                        |
-| Yellow Upper Bound     | 529             | Colour: Yellow                                        |
-| Green Lower Bound      | 530             | Colour: Green                                         |
-| Green Upper Bound      | 599             | Colour: Green                                         |
-| Cyan Lower Bound       | 600             | Colour: Cyan                                          |
-| Cyan Upper Bound       | 619             | Colour: Cyan                                          |
-| Blue Lower Bound       | 620             | Colour: Blue                                          |
-| Blue Upper Bound       | 669             | Colour: Blue                                          |
-| Violet Lower Bound     | 670             | Colour: Violet                                        |
-| Violet Upper Bound     | 790             | Colour: Violet                                        |
-| Above Violet / Invalid | 791             | Too high — above violet                               |
-| Zero  / Invalid        | 0               | Please enter a positive frequency that is above zero. |
-| Negative / Invalid     | -1              | Please enter a positive frequency that is above zero. |
-
 
 - This submodule checks whether two given frequencies produce the same visible color. It also validates if either frequency is out of range or non-positive. I’ve tested both valid and invalid inputs, and it handles all cases correctly with appropriate messages.
 

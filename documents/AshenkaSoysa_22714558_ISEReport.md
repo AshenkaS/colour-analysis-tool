@@ -43,7 +43,7 @@ Electromagnetic spectrum .
 ### Submodule : convertFrequencyToWavelength
 
 - **Imports**: frequencyTHz(double)  
-- **Exports**: wavelength(Stirng)  
+- **Exports**: wavelength(String)  
 - **Description**: Converts a given frequency (THz) to wavelength (nm) using `wavelength = 300000 / frequency`.Validates positive input.
 - **Design Decision**: Uses the Formula 1 given in the Figure 1.
 - **Assumptions**: Input must be positive and non-zero.
@@ -59,7 +59,7 @@ Electromagnetic spectrum .
 ### Submodule : InRange
 
 - **Imports**: frequencyTHz(double)  
-- **Exports**: rangeResult (double)  
+- **Exports**: rangeResult (String)  
 - **Description**: Checks if a frequency is within visible light (400-790 THz), IR (1-399 THz), or UV (791-30,000 THz) 
 ranges. Returns a message indicating which range the frequency belongs to.
 - **Design Decision**: Used if else to clearly seperate and prioritize checks for each frequency band.
@@ -470,3 +470,20 @@ java -ea TestCode
 I fixed the test case errors and the below image has the fixed version
 
 ![AfterFixingErrors](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/AfterFixingErrors.png)
+
+---
+
+## Summary table of my work
+
+| Module name |            Design of test cases              |                         |            |              |                       |      Test code implementation and execution     |     |            |
+|-------------|--------------------|----------------|-----------|--------------|-----------------------|-------------------------|------|------------|
+|             | *BB (EP)*            | *BB (BVA)*       | *WB*        | *Data type/s*  |*Form of Input/output*    | *EP*         | *BVA*  | *White-Box*  |
+|ColourFrequencyBounds       |done|not done         |not done   |String        |Input:String Output:String        | done         |not done |not done |
+|convertFrequencyToWavelength|done|not done         |not done   |double,String |Input:double Output:String        | done         |not done |not done |
+|convertWavelengthToFrequency|done|not done         |not done   |double,String |Input:double Output:String        | done         |not done |not done |
+|InRange                     |done|    done         |not done   |double,String |Input:double Output:String        | done         |not done |not done |
+|FrequencyToColour           |done|    done         |    done   |double,String |Input:double Output:String        | done         |not done |not done |
+|FrequencyComparison         |done|not done         |not done   |double,String |Input:double,double Output:String | done         |not done |not done |
+|getStone                    |done|not done         |    done   |String        |Input:String Output:String        | done         |not done |not done |
+|getNote                     |done|not done         |not done   |String        |Input:String Output:String        | done         |not done |not done |
+|getEmotion                  |done|not done         |not done   |String        |Input:String Output:String        | done         |not done |not done |

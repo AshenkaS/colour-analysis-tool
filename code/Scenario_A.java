@@ -62,19 +62,19 @@ public class Scenario_A{
         }
 
         if (frequencyTHz >= 400 && frequencyTHz <= 479) {
-            return "Colour: Red";
+            return "Red";
         } else if (frequencyTHz >= 480 && frequencyTHz <= 509) {
-            return "Colour: Orange";
+            return "Orange";
         } else if (frequencyTHz >= 510 && frequencyTHz <= 529) {
-            return "Colour: Yellow";
+            return "Yellow";
         } else if (frequencyTHz >= 530 && frequencyTHz <= 599) {
-            return "Colour: Green";
+            return "Green";
         } else if (frequencyTHz >= 600 && frequencyTHz <= 619) {
-            return "Colour: Cyan";
+            return "Cyan";
         } else if (frequencyTHz >= 620 && frequencyTHz <= 669) {
-            return "Colour: Blue";
+            return "Blue";
         } else if (frequencyTHz >= 670 && frequencyTHz <= 790) {
-            return "Colour: Violet";
+            return "Violet";
         } else if (frequencyTHz < 400) {
             return "Too low — below red";
         } else {
@@ -84,20 +84,24 @@ public class Scenario_A{
 
     // Compares two frequencies to check if they produce the same or different colours
     public static String FrequencyComparison(double freq1, double freq2) {
-        if (freq1 <= 0 || freq2 <= 0) {
-            return "Please enter positive frequencies that are above zero.";
-        }
-
-        String colour1 = FrequencyToColour(freq1);
-        String colour2 = FrequencyToColour(freq2);
-
-        if (colour1.equals(colour2)) {
-            return "The frequencies produce the same colour: " + colour1;
-        } else if (colour1.contains("Too") || colour2.contains("Too")) {
-            return "One or both frequencies are outside the visible range.";
-        } else {
-            return "The frequencies produce different colours: " + colour1 + " and " + colour2 + ".";
-        }
+    if (freq1 <= 0 || freq2 <= 0) {
+        return "Please enter positive frequencies that are above zero.";
     }
+
+    String colour1 = FrequencyToColour(freq1);
+    String colour2 = FrequencyToColour(freq2);
+
+    // Check for out-of-range colours exactly
+    if (colour1.equals("Too low — below red") || colour1.equals("Too high — above violet") ||
+        colour2.equals("Too low — below red") || colour2.equals("Too high — above violet")) {
+        return "One or both frequencies are outside the visible range.";
+    }
+
+    if (colour1.equals(colour2)) {
+        return "The frequencies produce the same colour: " + colour1;
+    } else {
+        return "The frequencies produce different colours: " + colour1 + " and " + colour2 + ".";
+    }
+}
 }
 

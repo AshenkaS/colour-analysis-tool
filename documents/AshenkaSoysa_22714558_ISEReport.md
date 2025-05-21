@@ -498,4 +498,6 @@ I fixed the test case errors and the below image has the fixed version
 
 ---
 
+## Discussion
 
+In this assignment, I was able successfully implemented a modular Java program that handles two key scenarios: the electromagnetic spectrum and colour fun facts.I developed the production code by applying modularity principles such as high cohesion and loose coupling, and I improved the code iteratively to make it more modular. Throughout the process I faced several difficulties and challenges in figuring out how to approach the implementation and clearly identify the scenarios. I resolved many errors through iterative testing, aiming to keep the code as simple, reliable, and independent as possible. This was also my first time creating documentation in Markdown. The project was a success as it passed all test cases and worked as intended. However, the code currently only identifies the UV, IR, and visible ranges which is a limitation and I believe it could be improved by adding support for more colour variations. This assignment also helped me understand how Git works. I practiced staging and committing changes and created two new branches ScenarioA and ScenarioB to compile and fix errors separately before merging them into the main branch. This workflow was a great success and helped maintain the stability of the project.

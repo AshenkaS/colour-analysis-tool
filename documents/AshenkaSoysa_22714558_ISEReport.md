@@ -191,7 +191,7 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 | **Category**         | **Check**                        | **Result** | **Explanation** |
 | -------------------- | -------------------------------- | ---------- | -----------------------------------------------------------------------------------------------|
 | **Global Variables** | No global variables used         |   Pass     | All variables are declared locally inside methods. |
-| **Control Flags**    | No unnecessary boolean flags     |   Failed   | Code uses boolean flags which is a type of control flags in the `InRange` method|
+| **Control Flags**    | used  unnecessary boolean flags  |   Failed   | Code uses boolean flags which is a type of control flags in the `InRange` method|
 | **High Cohesion**    | Each method has one focused task |   Pass     | Methods like `getStone` or `convertFrequencyToWavelength` handle one job. |
 | **Loose Coupling**   | Modules/classes are independent  |   Pass     | `Scenario_A` and `Scenario_B` don’t rely on each other’s internal workings. |
 | **Error Handling**   | Handles invalid input gracefully |   Pass     | Returns clear messages for invalid inputs (e.g., “Frequency must be between 0 and 30,000 THz”).|

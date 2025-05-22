@@ -23,7 +23,7 @@ documents as screenshots.
 
 ---
 
-##Module Description
+## Module Description
 
 - I created submodules with names that make it easy for me to understand their purpose. Each module was designed by 
 thinking about what imports and exports it needs, and I kept the descriptions short to quickly explain what each one 

@@ -115,27 +115,27 @@ fall outside the visible range.
 
 1. User has to open the terminal and navigate to the directory where the project is located using the below command.
 
-```
+--------------------------------------------------------------
 cd /home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo
-```
+--------------------------------------------------------------
 
 2. Next, the user has to go to the directory where the production code is located using the below command.
 
-```
+-------------------------------------------------------------
 cd code
-```
+-------------------------------------------------------------
 
 3. The user has to run the production code using the below command.
 
-```
+--------------------------------------------------------------------------
 javac Scenario_A.java ; javac Scenario_B.java ; javac Main.java
-```
+------------------------------------------------------------------------
 
 Step 4: The user has to Run the main class using the below command.
 
-```
+-------------------------------------------------------------------
 java Main
-```
+-------------------------------------------------------------------
 
 ---
 
@@ -442,27 +442,27 @@ colour. The user doesn’t need to understand how the colour is calculated.All t
 
 1. User has to open the terminal and navigate to the directory where the project is located using the below command.
 
-```
+---------------------------------------------------------------
 cd /home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo
-```
+---------------------------------------------------------------
 
 2. Next, the user has to go to the directory where the test code is located using the below command.
 
-```
+--------------------------------------------------------------
 cd code
-```
+--------------------------------------------------------------
 
 3. The user has to run the test code using the below command.
 
-```
+------------------------------------------------------------
 javac TestCode.java 
-```
+------------------------------------------------------------
 
 Step 4: The user has to Run the TestCode class using the below command.
 
-```
+------------------------------------------------------------
 java -ea TestCode
-```
+------------------------------------------------------------
 - Output of the Test implementation
 
 ![BeforeFixingErrors](/home/vboxuser/Desktop/Soysa_Ashenka22714558_ISErepo/documents/Screenshots/BeforeFixingErrors.png)
